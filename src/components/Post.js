@@ -25,7 +25,7 @@ function Post({ author, date, content, comments }) {
     <div className="post">
       <PostHeader />
       <p className="post-content"></p>
-      <PostCommentsv/>
+      <PostComments/>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Post from './Post';
+import PostItem from './Post';
 
 class PostList extends Component {
   state = {
@@ -24,12 +24,20 @@ class PostList extends Component {
           }
         ]
       },
-      {
-        id: 2
-        // Restante dos dados de um novo post
-      }
     ]
   };
+
+  render() {
+    const { post } = this.state;
+
+    return (
+      <div className="postlist">
+        {posts.map(post => {
+          <PostItem />
+        })}
+      </div>
+    );
+  }
 }
 
 export default PostList;

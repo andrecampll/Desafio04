@@ -35,3 +35,9 @@ nav#menu-content {
   flex-direction: column;
   align-items: center;
 }
+
+div.PostList {
+  width: 700px;
+  height: 250px;
+  background-color: #ffffff;
+}
