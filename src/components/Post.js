@@ -3,7 +3,7 @@ import React from 'react';
 function PostHeader({ author, date }) {
   return (
     <div className="post-header">
-      <img src={author.avatar} alt=""/>
+      <img class="avatar" src={author.avatar} alt=""/>
       <div className="details">
         <span>{author.name}</span>
         <span>{date}</span>
@@ -16,18 +16,27 @@ function PostComments({ comments }) {
   return (
     <div className="post-comments">
       <div className="divider" />
+      {comments.map(comment => (
+        <div key={comment.id} className="comment">
+          <img src={comment.author.avatar} alt="" className="avatar"/>
+          <p>
+            <span>{comment.author.name}</span>
+            {comment.content}
+          </p>
+        </div>
+      ))}
     </div>
   );
 }
 
-function Post({ author, date, content, comments }) {
+function PostItem({ author, date, content, comments }) {
   return (
     <div className="post">
-      <PostHeader />
-      <p className="post-content"></p>
-      <PostComments/>
+      <PostHeader author={author} date={date}/>
+      <p className="post-content">{content}</p>
+      <PostComments comments={comments}/>
     </div>
   );
 }
 
-export default Post;
+export default PostItem;
